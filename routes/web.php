@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AdressController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BoyerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/customers', [BoyerController::class, 'data'])->name('boyer');
+Route::get('/customers/{id}', [BoyerController::class, 'dataCustomer'])->name('dataCustomer');
